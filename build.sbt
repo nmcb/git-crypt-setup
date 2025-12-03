@@ -15,7 +15,8 @@ ThisBuild / scalacOptions ++= Seq(
   "-deprecation"
 )
 
-ThisBuild / Compile / run / fork         := true
+Compile / unmanagedResourceDirectories += baseDirectory.value / "private"
+ThisBuild / Compile / run / fork        := true
 ThisBuild / Compile / run / javaOptions ++= Seq("-Xmx4G", "-Xss1G", "-XX:+UseG1GC")
 
 ThisBuild / Test / fork         := true
